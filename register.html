@@ -1,0 +1,80 @@
+<div class="auth-container">
+  <div class="card">
+    <h2>Create account</h2>
+    <p class="sub">Join to get started</p>
+
+    <form (ngSubmit)="submit()" #f="ngForm" class="form">
+
+      <!-- Email -->
+      <label>Email</label>
+      <input
+        name="email"
+        [(ngModel)]="email"
+        (input)="onFieldChange()"
+        type="email"
+        required
+        placeholder="you@example.com"
+        [class.error]="validationErrors()['email']"
+      />
+      <div class="error-message" *ngIf="validationErrors()['email']">
+        {{ validationErrors()['email'] }}
+      </div>
+
+      <!-- Username -->
+      <label>Username</label>
+      <input
+        name="username"
+        [(ngModel)]="username"
+        (input)="onFieldChange()"
+        required
+        placeholder="Choose a username"
+        [class.error]="validationErrors()['username']"
+      />
+      <div class="error-message" *ngIf="validationErrors()['username']">
+        {{ validationErrors()['username'] }}
+      </div>
+
+      <!-- Password -->
+      <label>Password</label>
+      <input
+        name="password"
+        [(ngModel)]="password"
+        (input)="onFieldChange()"
+        type="password"
+        required
+        placeholder="Create a password"
+        [class.error]="validationErrors()['password']"
+      />
+      <div class="error-message" *ngIf="validationErrors()['password']">
+        {{ validationErrors()['password'] }}
+      </div>
+
+      <!-- Password requirements -->
+      <div class="password-requirements" *ngIf="password">
+        <h4>Password Requirements:</h4>
+        <ul>
+          <li [class.valid]="hasMinLength(password)">At least 8 characters</li>
+          <li [class.valid]="hasUppercase(password)">One uppercase letter</li>
+          <li [class.valid]="hasLowercase(password)">One lowercase letter</li>
+          <li [class.valid]="hasNumber(password)">One number</li>
+          <li [class.valid]="hasSpecialChar(password)">One special character</li>
+        </ul>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" [disabled]="!isFormValid()">Register</button>
+    </form>
+
+    <!-- Status message -->
+    <div
+      class="message"
+      [class.error]="message() && !message().startsWith('Registration successful')"
+    >
+      {{ message() }}
+    </div>
+
+    <p class="muted">
+      Already have an account? <a routerLink="/login">Login</a>
+    </p>
+  </div>
+</div>

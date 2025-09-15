@@ -1,0 +1,88 @@
+<div class="particles" id="particles"></div>
+
+<header class="header">
+  <a routerLink="#" class="logo">
+    <div class="logo-icon">
+      <i class="fas fa-file-alt"></i>
+    </div>
+    <span>SmartDok</span>
+  </a>
+  <div class="auth-buttons">
+    <a routerLink="/login" class="btn btn-login">Login</a>
+    <a routerLink="/register" class="btn btn-signup">Sign Up</a>
+  </div>
+</header>
+
+<main class="main-content">
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <h1 class="hero-title">Chat with Your Documents Like Never Before</h1>
+    <p class="hero-subtitle">
+      Transform any PDF into an intelligent conversation partner. Upload, ask questions, and get instant answers with precise citations. Perfect for research, analysis, and knowledge extraction.
+    </p>
+    
+    <div class="cta-buttons">
+      <a routerLink="/login" class="btn btn-primary">Get Started Free</a>
+      <a href="#demo" class="btn btn-secondary">
+        <i class="fas fa-play"></i> Watch Demo
+      </a>
+    </div>
+
+    <!-- Features -->
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-comments"></i>
+        </div>
+        <h3 class="feature-title">Intelligent Conversations</h3>
+        <p class="feature-desc">Chat naturally with your PDFs using advanced AI that understands context and provides relevant answers.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-search"></i>
+        </div>
+        <h3 class="feature-title">Smart Content Retrieval</h3>
+        <p class="feature-desc">Our AI segments and indexes your documents for lightning-fast, accurate information retrieval.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3 class="feature-title">Enterprise Security</h3>
+        <p class="feature-desc">Your documents remain private and secure. Only you can access your uploaded content.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Demo Section -->
+  <div class="demo-section" id="demo">
+    <div class="demo-container">
+      <div class="demo-header">
+        <h3 class="demo-title">See SmartDok in Action</h3>
+        <p class="demo-subtitle">Experience how easy it is to get answers from your documents</p>
+      </div>
+      
+      <div class="chat-demo" id="chatDemo">
+        <div class="message user">
+          <div class="message-avatar user-avatar">U</div>
+          <div class="message-content">What are the key findings in the research paper?</div>
+        </div>
+        
+        <div class="message bot">
+          <div class="message-avatar bot-avatar">AI</div>
+          <div class="message-content">Based on the document, there are three key findings: 1) Performance improved by 23%, 2) User satisfaction increased significantly, and 3) Cost reduction of 15% was achieved.</div>
+        </div>
+      </div>
+      
+      <a routerLink="/register" class="try-demo-btn">
+        <i class="fas fa-rocket"></i> Try SmartDok Now
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <span>© {{ currentYear }} SmartDok</span>
+</footer>
